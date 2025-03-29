@@ -12,4 +12,5 @@
 
 <h3>c. Masuk ke alamat yang diberikan dan selesai !</h3>
 <h3>d. Jika ingin hasil build maka tinggal masukkan perintah = npm build</h3>
-<h2>Preview web : <a href="https://stellar-macaron-567244.netlify.app/#/login">https://stellar-macaron-567244.netlify.app/#/login</a></h2>
+<h2>Preview web : </h2>
+<a href="https://stellar-macaron-567244.netlify.app/#/login" target="_blank">https://stellar-macaron-567244.netlify.app/#/login</a>
