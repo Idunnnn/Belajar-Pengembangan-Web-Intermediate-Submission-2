@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <meta name="description" content="Aplikasi permainan story" />
+    <title>App</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="./scripts/index.js"></script>
+  </head>
+  <body class="relative min-h-screen">
+    <header class="fixed left-0 top-0 right-0 bg-zinc-950">
+      <a
+        href="#first-main-content-item"
+        class="absolute left-0 top-0 -translate-y-full bg-blue-600 text-white px-4 py-2 focus:translate-y-0 focus:outline-none"
+      >
+        Skip to Main Content
+      </a>
+      <div class="flex justify-between responsive py-5">
+        <a href="#/" class="flex gap-2 items-center">
+          <img src="./images/logo.png" width="50" alt="logo" />
+          <h1 class="brand-name text-zinc-200 text-2xl">App</h1>
+        </a>
+
+        <nav
+          id="navigation-drawer"
+          class="lg:flex lg:translate-x-0 z-10 opacity-0 lg:opacity-100 hidden lg:relative absolute right-0 left-0 top-full items-center bg-zinc-950 transition-all duration-300"
+        >
+          <ul id="nav-list" class="lg:flex-row flex-col flex gap-7 lg:items-center px-4 lg:px-0 pb-5 lg:pb-0">
+            <li>
+              <a href="#/" class="nav-item">Beranda</a>
+            </li>
+            <li>
+              <a href="#/saved" class="nav-item">Saved</a>
+            </li>
+
+            <li id="" class="flex gap-3">
+              <div id="subscribe-button-container" class="flex">
+                <button id="subscribe-button" type="button" class="primary-btn flex gap-3 items-center">
+                  <p>Subscribe</p>
+                  <svg
+                    width="16"
+                    version="1.0"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 64 64"
+                    enable-background="new 0 0 64 64"
+                    xml:space="preserve"
+                    fill="#000000"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <g>
+                        <path
+                          fill="#231F20"
+                          d="M56,44c-1.832,0-4-2.168-4-4V20C52,8.973,43.027,0,32,0S12,8.973,12,20v20c0,1.793-2.207,4-4,4 c-2.211,0-4,1.789-4,4s1.789,4,4,4h48c2.211,0,4-1.789,4-4S58.211,44,56,44z"
+                        ></path>
+                        <path fill="#231F20" d="M32,64c4.418,0,8-3.582,8-8H24C24,60.418,27.582,64,32,64z"></path>
+                      </g>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+
+              <a href="#/createStory" class="primary-btn flex gap-1 items-center min-w-fit">
+                <p class="text-nowrap">Create story</p>
+                <svg viewBox="0 0 24 24" width="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.25 12.75V18H12.75V12.75H18V11.25H12.75V6H11.25V11.25H6V12.75H11.25Z"
+                      fill="#09090b"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+
+              <button
+                id="logout-button"
+                type="button"
+                class="font-semibold border hover:bg-zinc-800 active:bg-zinc-800 border-zinc-800 px-4 py-3 rounded flex gap-2"
+              >
+                <p>Logout</p>
+
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" width="26">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M14 22V16.9612C14 16.3537 13.7238 15.7791 13.2494 15.3995L11.5 14M11.5 14L13 7.5M11.5 14L10 13M13 7.5L11 7M13 7.5L15.0426 10.7681C15.3345 11.2352 15.8062 11.5612 16.3463 11.6693L18 12M10 13L11 7M10 13L9.40011 16.2994C9.18673 17.473 8.00015 18.2 6.85767 17.8573L4 17M11 7L8.10557 8.44721C7.428 8.786 7 9.47852 7 10.2361V12M14.5 3.5C14.5 4.05228 14.0523 4.5 13.5 4.5C12.9477 4.5 12.5 4.05228 12.5 3.5C12.5 2.94772 12.9477 2.5 13.5 2.5C14.0523 2.5 14.5 2.94772 14.5 3.5Z"
+                      stroke="#66666f"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <button id="drawer-button" class="lg:hidden w-[30px]">☰</button>
+      </div>
+    </header>
+ 
+    <main id="main-content"></main>
+    <div id="message-container"></div>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+APP_URL='https://stellar-macaron-567244.netlify.app/#/login'
+MAP_SERVICE_API_KEY='lnuhAxbXLgkhiXPIgsjO'
